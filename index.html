@@ -27,7 +27,6 @@
     color: var(--text);
   }
 
-  /* ---- GRAIN TEXTURE ---- */
   body::before {
     content: '';
     position: fixed;
@@ -38,7 +37,6 @@
     opacity: 0.5;
   }
 
-  /* ---- PAGES ---- */
   .page {
     position: fixed;
     inset: 0;
@@ -59,7 +57,6 @@
     transform: translateY(0);
   }
 
-  /* ---- DECORATIVE CIRCLES ---- */
   .deco-circle {
     position: fixed;
     border-radius: 50%;
@@ -67,7 +64,6 @@
     z-index: 0;
   }
 
-  /* ---- NAV ---- */
   .nav {
     position: fixed;
     top: 0; left: 0; right: 0;
@@ -101,23 +97,50 @@
     transform: scaleX(0);
     transition: transform 0.3s ease;
   }
-  .nav-btn:hover, .nav-btn.active {
-    color: var(--deep);
-  }
-  .nav-btn:hover::after, .nav-btn.active::after {
-    transform: scaleX(1);
-  }
+  .nav-btn:hover, .nav-btn.active { color: var(--deep); }
+  .nav-btn:hover::after, .nav-btn.active::after { transform: scaleX(1); }
 
-  /* ============================
-     PAGE 1 — MAIN
-  ============================*/
+  /* PAGE 1 — MAIN */
   #page-main {
     background: var(--cream);
-    text-align: center;
-    gap: 0;
     padding: 0;
     overflow: hidden;
   }
+
+  /* Коллаж — занимает весь экран, идеально по центру */
+  .main-collage-wrap {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .main-collage-bg {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: min(100vh, 100vw);
+    height: min(100vh, 100vw);
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+  /* Текст поверх коллажа — строго по центру */
+  .main-oval-window {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 1rem;
+    /* ширина ~40% от меньшей стороны экрана — oval в центре коллажа */
+    width: 40vmin;
+    max-width: 340px;
+  }
+
   .main-eyebrow {
     font-family: 'DM Sans', sans-serif;
     font-size: 11px;
@@ -136,10 +159,7 @@
     letter-spacing: -0.02em;
     animation: fadeUp 0.8s ease 0.4s both;
   }
-  .main-name em {
-    font-style: italic;
-    color: var(--dusty);
-  }
+  .main-name em { font-style: italic; color: var(--dusty); }
   .main-subtitle {
     font-family: 'Cormorant Garamond', serif;
     font-size: clamp(1.1rem, 3vw, 1.6rem);
@@ -179,394 +199,85 @@
     color: var(--muted);
     transition: color 0.3s, transform 0.3s;
   }
-  .section-link:hover {
-    color: var(--deep);
-    transform: translateY(-3px);
-  }
+  .section-link:hover { color: var(--deep); transform: translateY(-3px); }
   .section-link-icon {
-    width: 48px;
-    height: 48px;
+    width: 48px; height: 48px;
     border-radius: 50%;
     border: 1px solid var(--rose);
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    display: flex; align-items: center; justify-content: center;
     font-size: 1.2rem;
     transition: background 0.3s, border-color 0.3s;
   }
-  .section-link:hover .section-link-icon {
-    background: var(--blush);
-    border-color: var(--dusty);
-  }
-  .section-link-label {
-    font-size: 11px;
-    letter-spacing: 0.15em;
-    text-transform: uppercase;
-    font-weight: 500;
-  }
+  .section-link:hover .section-link-icon { background: var(--blush); border-color: var(--dusty); }
+  .section-link-label { font-size: 11px; letter-spacing: 0.15em; text-transform: uppercase; font-weight: 500; }
 
-  /* ============================
-     PAGE 2 — PHOTOS
-  ============================*/
-  #page-photos {
-    padding-top: 5rem;
-    padding-bottom: 2rem;
-    justify-content: flex-start;
-    min-height: 100vh;
-  }
-  .photos-header {
-    text-align: center;
-    margin-bottom: 2.5rem;
-    animation: fadeUp 0.6s ease both;
-  }
-  .photos-header h2 {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: clamp(2rem, 6vw, 3.5rem);
-    font-weight: 300;
-    font-style: italic;
-    color: var(--text);
-  }
-  .photos-header p {
-    font-size: 13px;
-    color: var(--muted);
-    margin-top: 0.5rem;
-    letter-spacing: 0.08em;
-  }
-  .polaroid-grid {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 1.5rem;
-    justify-content: center;
-    max-width: 900px;
-    width: 100%;
-  }
-  .polaroid {
-    background: var(--white);
-    padding: 12px 12px 40px;
-    box-shadow: 0 4px 20px rgba(139,90,74,0.12), 0 1px 4px rgba(139,90,74,0.08);
-    transform: rotate(var(--rot, -1.5deg));
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    cursor: pointer;
-    max-width: 200px;
-    flex-shrink: 0;
-  }
-  .polaroid:hover {
-    transform: rotate(0deg) scale(1.04);
-    box-shadow: 0 8px 32px rgba(139,90,74,0.2);
-    z-index: 10;
-    position: relative;
-  }
-  .polaroid-img {
-    width: 176px;
-    height: 176px;
-    object-fit: cover;
-    display: block;
-  }
-  .polaroid-placeholder {
-    width: 176px;
-    height: 176px;
-    background: var(--blush);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 2rem;
-    color: var(--rose);
-  }
-  .polaroid-caption {
-    font-family: 'Dancing Script', cursive;
-    font-size: 15px;
-    color: var(--muted);
-    text-align: center;
-    margin-top: 8px;
-    padding: 0 4px;
-    line-height: 1.3;
-  }
-
-  /* ============================
-     PAGE 3 — MUSIC
-  ============================*/
-  #page-music {
-    gap: 0;
-    padding-top: 5rem;
-    padding-bottom: 2rem;
-    justify-content: flex-start;
-    min-height: 100vh;
-  }
-  .music-header {
-    text-align: center;
-    margin-bottom: 2.5rem;
-  }
-  .music-header h2 {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: clamp(2rem, 6vw, 3.5rem);
-    font-weight: 300;
-    font-style: italic;
-    color: var(--text);
-  }
-  .music-header p {
-    font-size: 13px;
-    color: var(--muted);
-    margin-top: 0.5rem;
-    letter-spacing: 0.05em;
-  }
-  .music-list {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-    width: 100%;
-    max-width: 560px;
-  }
-  .track {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-    padding: 1rem 1.25rem;
-    background: var(--white);
-    border-radius: 12px;
-    border: 1px solid rgba(201,139,120,0.2);
-    transition: border-color 0.3s, background 0.3s;
-    cursor: pointer;
-  }
-  .track:hover {
-    border-color: var(--rose);
-    background: #fff9f7;
-  }
-  .track.playing {
-    border-color: var(--dusty);
-    background: #fff5f1;
-  }
-  .track-play {
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    background: var(--blush);
-    border: none;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-shrink: 0;
-    transition: background 0.3s, transform 0.2s;
-    color: var(--deep);
-    font-size: 1rem;
-  }
-  .track-play:hover {
-    background: var(--rose);
-    transform: scale(1.08);
-  }
-  .track.playing .track-play {
-    background: var(--dusty);
-    color: var(--white);
-  }
-  .track-info {
-    flex: 1;
-    min-width: 0;
-  }
-  .track-title {
-    font-weight: 500;
-    font-size: 15px;
-    color: var(--text);
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-  }
-  .track-artist {
-    font-size: 12px;
-    color: var(--muted);
-    margin-top: 2px;
-  }
-  .track-note {
-    font-family: 'Dancing Script', cursive;
-    font-size: 14px;
-    color: var(--rose);
-    flex-shrink: 0;
-    max-width: 130px;
-    text-align: right;
-    line-height: 1.3;
-  }
-  .track-progress {
-    height: 2px;
-    background: var(--blush);
-    border-radius: 2px;
-    margin-top: 8px;
-    overflow: hidden;
-  }
-  .track-progress-bar {
-    height: 100%;
-    background: var(--dusty);
-    width: 0%;
-    transition: width 0.5s linear;
-  }
-  .music-note-big {
-    font-size: 4rem;
-    color: var(--blush);
-    position: fixed;
-    pointer-events: none;
-    animation: float 6s ease-in-out infinite;
-  }
-  @keyframes float {
-    0%, 100% { transform: translateY(0) rotate(-5deg); }
-    50% { transform: translateY(-20px) rotate(5deg); }
-  }
-
-  /* ============================
-     PAGE 4 — LETTER
-  ============================*/
-  #page-letter {
-    padding-top: 5rem;
-    padding-bottom: 2rem;
-  }
-  .letter-wrapper {
-    max-width: 640px;
-    width: 100%;
-    background: var(--white);
-    border-radius: 2px;
-    box-shadow:
-      0 2px 4px rgba(139,90,74,0.08),
-      0 8px 32px rgba(139,90,74,0.1),
-      0 20px 60px rgba(139,90,74,0.06);
-    padding: 3.5rem 4rem;
-    position: relative;
-    overflow: hidden;
-  }
-  .letter-wrapper::before {
-    content: '';
-    position: absolute;
-    top: 0; left: 0; right: 0;
-    height: 4px;
-    background: linear-gradient(to right, var(--rose), var(--dusty), var(--rose));
-  }
-  .letter-wrapper::after {
-    content: '';
-    position: absolute;
-    bottom: -20px; right: -20px;
-    width: 120px; height: 120px;
-    border-radius: 50%;
-    background: var(--blush);
-    opacity: 0.3;
-  }
-  .letter-date {
-    font-family: 'Dancing Script', cursive;
-    font-size: 14px;
-    color: var(--muted);
-    margin-bottom: 1.5rem;
-    display: block;
-  }
-  .letter-salutation {
-    font-family: 'Dancing Script', cursive;
-    font-size: 2rem;
-    color: var(--deep);
-    margin-bottom: 1.5rem;
-    display: block;
-  }
-  .letter-body {
-    font-family: 'Dancing Script', cursive;
-    font-size: 1.25rem;
-    line-height: 2;
-    color: var(--text);
-    position: relative;
-    z-index: 1;
-  }
-  .letter-body p {
-    margin-bottom: 1.2rem;
-  }
-  .letter-body p:last-child {
-    margin-bottom: 0;
-  }
-  .letter-sign {
-    font-family: 'Dancing Script', cursive;
-    font-size: 1.4rem;
-    color: var(--dusty);
-    margin-top: 2rem;
-    display: block;
-    text-align: right;
-  }
-  .letter-lines {
-    position: absolute;
-    inset: 0;
-    background-image: repeating-linear-gradient(
-      transparent,
-      transparent 39px,
-      rgba(201,139,120,0.1) 39px,
-      rgba(201,139,120,0.1) 40px
-    );
-    background-position: 0 80px;
-    pointer-events: none;
-    z-index: 0;
-  }
-
-
-  /* ---- COLLAGE MAIN ---- */
-  .main-collage-wrap {
-    position: fixed;
-    top: 48px;
-    left: 0; right: 0; bottom: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    z-index: 1;
-  }
-  .main-collage-bg {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: min(calc(100vh - 48px), 100vw);
-    height: min(calc(100vh - 48px), 100vw);
-    background-size: contain;
-    background-position: center;
-    background-repeat: no-repeat;
-  }
-  .main-collage-bg::after { content: none; }
-  .main-oval-window {
-    position: relative;
-    z-index: 2;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    padding: 1rem;
-    max-width: 44vmin;
-  }
   .main-oval-window .main-eyebrow { margin-bottom: 0.5rem; text-shadow: 0 0 20px rgba(253,246,240,1), 0 0 40px rgba(253,246,240,1); }
-  .main-oval-window .main-name { font-size: clamp(3rem, 7vw, 6rem); text-shadow: 0 0 20px rgba(253,246,240,1), 0 0 40px rgba(253,246,240,1), 0 0 60px rgba(253,246,240,0.8); }
-  .main-oval-window .main-subtitle { font-size: clamp(1rem, 2vw, 1.2rem); margin-top: 0.4rem; text-shadow: 0 0 15px rgba(253,246,240,1), 0 0 30px rgba(253,246,240,1); }
-  .main-oval-window .main-joke { font-size: 12px; text-shadow: 0 0 10px rgba(253,246,240,1); }
-  .main-oval-window .main-divider { margin: 0.7rem auto; }
-  .main-oval-window .main-sections { gap: 1.4rem; }
-  .main-oval-window .section-link-icon { width: 38px; height: 38px; font-size: 0.95rem; background: rgba(253,246,240,0.8); }
+  .main-oval-window .main-name { font-size: clamp(2.5rem, 6vw, 5rem); text-shadow: 0 0 20px rgba(253,246,240,1), 0 0 40px rgba(253,246,240,1), 0 0 60px rgba(253,246,240,0.8); }
+  .main-oval-window .main-subtitle { font-size: clamp(0.9rem, 1.8vw, 1.1rem); margin-top: 0.4rem; text-shadow: 0 0 15px rgba(253,246,240,1), 0 0 30px rgba(253,246,240,1); }
+  .main-oval-window .main-joke { font-size: 11px; text-shadow: 0 0 10px rgba(253,246,240,1); }
+  .main-oval-window .main-divider { margin: 0.6rem auto; }
+  .main-oval-window .main-sections { gap: 1rem; }
+  .main-oval-window .section-link-icon { width: 34px; height: 34px; font-size: 0.85rem; background: rgba(253,246,240,0.8); }
   .main-oval-window .section-link-label { font-size: 9px; text-shadow: 0 0 10px rgba(253,246,240,1); }
 
-  /* ---- ANIMATIONS ---- */
-  @keyframes fadeUp {
-    from { opacity: 0; transform: translateY(16px); }
-    to   { opacity: 1; transform: translateY(0); }
-  }
+  /* PAGE 2 — PHOTOS */
+  #page-photos { padding-top: 5rem; padding-bottom: 2rem; justify-content: flex-start; min-height: 100vh; }
+  .photos-header { text-align: center; margin-bottom: 2.5rem; animation: fadeUp 0.6s ease both; }
+  .photos-header h2 { font-family: 'Cormorant Garamond', serif; font-size: clamp(2rem, 6vw, 3.5rem); font-weight: 300; font-style: italic; color: var(--text); }
+  .photos-header p { font-size: 13px; color: var(--muted); margin-top: 0.5rem; letter-spacing: 0.08em; }
+  .polaroid-grid { display: flex; flex-wrap: wrap; gap: 1.5rem; justify-content: center; max-width: 900px; width: 100%; }
+  .polaroid { background: var(--white); padding: 12px 12px 40px; box-shadow: 0 4px 20px rgba(139,90,74,0.12), 0 1px 4px rgba(139,90,74,0.08); transform: rotate(var(--rot, -1.5deg)); transition: transform 0.3s ease, box-shadow 0.3s ease; cursor: pointer; max-width: 200px; flex-shrink: 0; }
+  .polaroid:hover { transform: rotate(0deg) scale(1.04); box-shadow: 0 8px 32px rgba(139,90,74,0.2); z-index: 10; position: relative; }
+  .polaroid-img { width: 176px; height: 176px; object-fit: cover; display: block; }
+  .polaroid-placeholder { width: 176px; height: 176px; background: var(--blush); display: flex; align-items: center; justify-content: center; font-size: 2rem; color: var(--rose); }
+  .polaroid-caption { font-family: 'Dancing Script', cursive; font-size: 15px; color: var(--muted); text-align: center; margin-top: 8px; padding: 0 4px; line-height: 1.3; }
 
-  /* ---- CONFETTI ---- */
-  .confetti-piece {
-    position: fixed;
-    top: -10px;
-    border-radius: 2px;
-    pointer-events: none;
-    z-index: 9998;
-    animation: confettiFall linear forwards;
-  }
-  @keyframes confettiFall {
-    to {
-      transform: translateY(110vh) rotate(720deg);
-      opacity: 0;
-    }
-  }
+  /* PAGE 3 — MUSIC */
+  #page-music { gap: 0; padding-top: 5rem; padding-bottom: 2rem; justify-content: flex-start; min-height: 100vh; }
+  .music-header { text-align: center; margin-bottom: 2.5rem; }
+  .music-header h2 { font-family: 'Cormorant Garamond', serif; font-size: clamp(2rem, 6vw, 3.5rem); font-weight: 300; font-style: italic; color: var(--text); }
+  .music-header p { font-size: 13px; color: var(--muted); margin-top: 0.5rem; letter-spacing: 0.05em; }
+  .music-list { display: flex; flex-direction: column; gap: 1rem; width: 100%; max-width: 560px; }
+  .track { display: flex; align-items: center; gap: 1rem; padding: 1rem 1.25rem; background: var(--white); border-radius: 12px; border: 1px solid rgba(201,139,120,0.2); transition: border-color 0.3s, background 0.3s; cursor: pointer; }
+  .track:hover { border-color: var(--rose); background: #fff9f7; }
+  .track.playing { border-color: var(--dusty); background: #fff5f1; }
+  .track-play { width: 40px; height: 40px; border-radius: 50%; background: var(--blush); border: none; cursor: pointer; display: flex; align-items: center; justify-content: center; flex-shrink: 0; transition: background 0.3s, transform 0.2s; color: var(--deep); font-size: 1rem; }
+  .track-play:hover { background: var(--rose); transform: scale(1.08); }
+  .track.playing .track-play { background: var(--dusty); color: var(--white); }
+  .track-info { flex: 1; min-width: 0; }
+  .track-title { font-weight: 500; font-size: 15px; color: var(--text); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .track-artist { font-size: 12px; color: var(--muted); margin-top: 2px; }
+  .track-note { font-family: 'Dancing Script', cursive; font-size: 14px; color: var(--rose); flex-shrink: 0; max-width: 130px; text-align: right; line-height: 1.3; }
+  .track-progress { height: 2px; background: var(--blush); border-radius: 2px; margin-top: 8px; overflow: hidden; }
+  .track-progress-bar { height: 100%; background: var(--dusty); width: 0%; transition: width 0.5s linear; }
+  .music-note-big { font-size: 4rem; color: var(--blush); position: fixed; pointer-events: none; animation: float 6s ease-in-out infinite; }
+  @keyframes float { 0%, 100% { transform: translateY(0) rotate(-5deg); } 50% { transform: translateY(-20px) rotate(5deg); } }
 
-  /* ---- SCROLLBAR ---- */
+  /* PAGE 4 — LETTER */
+  #page-letter { padding-top: 5rem; padding-bottom: 2rem; }
+  .letter-wrapper { max-width: 640px; width: 100%; background: var(--white); border-radius: 2px; box-shadow: 0 2px 4px rgba(139,90,74,0.08), 0 8px 32px rgba(139,90,74,0.1), 0 20px 60px rgba(139,90,74,0.06); padding: 3.5rem 4rem; position: relative; overflow: hidden; }
+  .letter-wrapper::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 4px; background: linear-gradient(to right, var(--rose), var(--dusty), var(--rose)); }
+  .letter-wrapper::after { content: ''; position: absolute; bottom: -20px; right: -20px; width: 120px; height: 120px; border-radius: 50%; background: var(--blush); opacity: 0.3; }
+  .letter-date { font-family: 'Dancing Script', cursive; font-size: 14px; color: var(--muted); margin-bottom: 1.5rem; display: block; }
+  .letter-salutation { font-family: 'Dancing Script', cursive; font-size: 2rem; color: var(--deep); margin-bottom: 1.5rem; display: block; }
+  .letter-body { font-family: 'Dancing Script', cursive; font-size: 1.25rem; line-height: 2; color: var(--text); position: relative; z-index: 1; }
+  .letter-body p { margin-bottom: 1.2rem; }
+  .letter-body p:last-child { margin-bottom: 0; }
+  .letter-sign { font-family: 'Dancing Script', cursive; font-size: 1.4rem; color: var(--dusty); margin-top: 2rem; display: block; text-align: right; }
+  .letter-lines { position: absolute; inset: 0; background-image: repeating-linear-gradient(transparent, transparent 39px, rgba(201,139,120,0.1) 39px, rgba(201,139,120,0.1) 40px); background-position: 0 80px; pointer-events: none; z-index: 0; }
+
+  @keyframes fadeUp { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: translateY(0); } }
+
+  .confetti-piece { position: fixed; top: -10px; border-radius: 2px; pointer-events: none; z-index: 9998; animation: confettiFall linear forwards; }
+  @keyframes confettiFall { to { transform: translateY(110vh) rotate(720deg); opacity: 0; } }
+
   ::-webkit-scrollbar { width: 6px; }
   ::-webkit-scrollbar-track { background: transparent; }
   ::-webkit-scrollbar-thumb { background: var(--rose); border-radius: 3px; }
 
   @media (max-width: 600px) {
-    .main-sections { gap: 1.5rem; }
+    .main-oval-window { width: 52vmin; }
+    .main-sections { gap: 1.2rem; }
     .letter-wrapper { padding: 2rem 1.5rem; }
     .polaroid-grid { gap: 1rem; }
     .polaroid { max-width: 160px; }
@@ -578,7 +289,6 @@
 </head>
 <body>
 
-<!-- NAV -->
 <nav class="nav" id="main-nav">
   <button class="nav-btn active" onclick="showPage('main')" data-page="main">Главная</button>
   <button class="nav-btn" onclick="showPage('photos')" data-page="photos">Фото</button>
@@ -586,11 +296,10 @@
   <button class="nav-btn" onclick="showPage('letter')" data-page="letter">Письмо</button>
 </nav>
 
-<!-- DECO -->
 <div class="deco-circle" style="width:400px;height:400px;background:radial-gradient(circle,#f2d9d040,transparent 70%);top:-100px;right:-100px;"></div>
 <div class="deco-circle" style="width:300px;height:300px;background:radial-gradient(circle,#e8b4a230,transparent 70%);bottom:-80px;left:-80px;"></div>
 
-<!-- ====== PAGE 1: MAIN ====== -->
+<!-- PAGE 1: MAIN -->
 <div class="page active" id="page-main">
   <div class="main-collage-wrap">
     <div class="main-collage-bg" style="background-image: url('collage_arched.png');"></div>
@@ -618,20 +327,16 @@
   </div>
 </div>
 
-<!-- ====== PAGE 2: PHOTOS ====== -->
+<!-- PAGE 2: PHOTOS -->
 <div class="page" id="page-photos">
   <div class="photos-header">
     <h2>мы любим тебя в любом настроении</h2>
     <p>а ещё в любом освещении, и даже без него</p>
   </div>
-  <div class="polaroid-grid" id="polaroid-grid">
-    <!-- Поляроиды — замени src на свои фото! -->
-    <!-- ПРИМЕР С ФОТО: <img class="polaroid-img" src="photo1.jpg" alt=""> -->
-    <!-- ПРИМЕР БЕЗ ФОТО: оставь polaroid-placeholder -->
-  </div>
+  <div class="polaroid-grid" id="polaroid-grid"></div>
 </div>
 
-<!-- ====== PAGE 3: MUSIC ====== -->
+<!-- PAGE 3: MUSIC -->
 <div class="page" id="page-music">
   <div class="music-note-big" style="top:15%;left:5%;">♩</div>
   <div class="music-note-big" style="top:60%;right:8%;animation-delay:-2s;font-size:2.5rem;">♫</div>
@@ -639,21 +344,17 @@
     <h2>твоя музыка</h2>
     <p>треки, которые = ты</p>
   </div>
-  <div class="music-list" id="music-list">
-    <!-- Треки добавляются скриптом ниже -->
-  </div>
-  <!-- Скрытые аудио-элементы: замени src на свои mp3-файлы -->
+  <div class="music-list" id="music-list"></div>
   <div id="audio-container" style="display:none;"></div>
 </div>
 
-<!-- ====== PAGE 4: LETTER ====== -->
+<!-- PAGE 4: LETTER -->
 <div class="page" id="page-letter">
   <div class="letter-wrapper">
     <div class="letter-lines"></div>
     <span class="letter-date" id="letter-date"></span>
     <span class="letter-salutation">Дорогая Маша,</span>
     <div class="letter-body">
-      <!-- Замени текст на своё письмо -->
       <p>Мы хотели написать что-то умное и красивое, но в итоге просто сидели и смеялись, вспоминая всё, что было.</p>
       <p>Ты — тот человек, с которым любая ерунда превращается в историю, которую будешь рассказывать спустя годы. Спасибо за это.</p>
       <p>Пусть этот год будет таким же непредсказуемым, ярким и тёплым, как ты сама. Мы тебя очень любим.</p>
@@ -663,9 +364,6 @@
 </div>
 
 <script>
-// ============================================================
-// НАСТРОЙ ЗДЕСЬ: фотографии
-// ============================================================
 const photos = [
   { src: null, caption: "подпись к фото 1" },
   { src: null, caption: "подпись к фото 2" },
@@ -674,25 +372,18 @@ const photos = [
   { src: null, caption: "подпись к фото 5" },
   { src: null, caption: "подпись к фото 6" },
 ];
-// Чтобы добавить фото: { src: "photo1.jpg", caption: "твоя подпись" }
 
-// ============================================================
-// НАСТРОЙ ЗДЕСЬ: музыка
-// ============================================================
 const tracks = [
   { title: "Название песни 1", artist: "Артист", src: "track1.mp3", note: "вот это точно ты" },
   { title: "Название песни 2", artist: "Артист", src: "track2.mp3", note: "помнишь, мы слушали..." },
   { title: "Название песни 3", artist: "Артист", src: "track3.mp3", note: "твой гимн" },
   { title: "Название песни 4", artist: "Артист", src: "track4.mp3", note: "🎵" },
 ];
-// ============================================================
 
-// Дата в письме
 const months = ['января','февраля','марта','апреля','мая','июня','июля','августа','сентября','октября','ноября','декабря'];
 const d = new Date();
 document.getElementById('letter-date').textContent = `${d.getDate()} ${months[d.getMonth()]} ${d.getFullYear()}`;
 
-// Рендер поляроидов
 const grid = document.getElementById('polaroid-grid');
 const rots = [-2.5, 1.8, -1.2, 2.2, -0.8, 1.5, -2, 1, -1.8, 2.5];
 photos.forEach((p, i) => {
@@ -707,22 +398,18 @@ photos.forEach((p, i) => {
   grid.appendChild(card);
 });
 
-// Рендер треков + аудио
 let currentAudio = null;
 let currentTrackEl = null;
-
 const musicList = document.getElementById('music-list');
 const audioContainer = document.getElementById('audio-container');
 
 tracks.forEach((t, i) => {
-  // Аудио
   const audio = document.createElement('audio');
   audio.src = t.src;
   audio.preload = 'none';
   audio.id = `audio-${i}`;
   audioContainer.appendChild(audio);
 
-  // Карточка трека
   const card = document.createElement('div');
   card.className = 'track';
   card.id = `track-${i}`;
@@ -738,10 +425,8 @@ tracks.forEach((t, i) => {
   musicList.appendChild(card);
 
   const btn = card.querySelector('.track-play');
-
   btn.addEventListener('click', () => {
     const audio = document.getElementById(`audio-${i}`);
-
     if (currentAudio && currentAudio !== audio) {
       currentAudio.pause();
       currentAudio.currentTime = 0;
@@ -749,7 +434,6 @@ tracks.forEach((t, i) => {
       currentTrackEl.querySelector('.track-play').textContent = '▶';
       document.getElementById(`bar-${currentTrackEl.id.replace('track-','bar-')}`).style.width = '0%';
     }
-
     if (audio.paused) {
       audio.play().catch(() => {});
       card.classList.add('playing');
@@ -768,7 +452,6 @@ tracks.forEach((t, i) => {
       document.getElementById(`bar-${i}`).style.width = (audio.currentTime / audio.duration * 100) + '%';
     }
   });
-
   audio.addEventListener('ended', () => {
     card.classList.remove('playing');
     btn.textContent = '▶';
@@ -776,7 +459,6 @@ tracks.forEach((t, i) => {
   });
 });
 
-// Навигация
 function showPage(id) {
   document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
   document.querySelectorAll('.nav-btn').forEach(b => b.classList.remove('active'));
@@ -794,7 +476,6 @@ function showPage(id) {
   }
 }
 
-// Конфетти при открытии
 function launchConfetti() {
   const colors = ['#f2d9d0','#e8b4a2','#c98b78','#fdf6f0','#8b5a4a'];
   for (let i = 0; i < 60; i++) {
@@ -816,7 +497,6 @@ function launchConfetti() {
   }
 }
 
-// Конфетти при загрузке
 window.addEventListener('load', () => {
   setTimeout(launchConfetti, 400);
   const nav = document.getElementById('main-nav');
@@ -825,4 +505,5 @@ window.addEventListener('load', () => {
   nav.style.transition = 'opacity 0.4s ease';
 });
 </script>
-</body></html>
+</body>
+</html>
