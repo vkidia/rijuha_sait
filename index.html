@@ -499,7 +499,8 @@
   /* ---- COLLAGE MAIN ---- */
   .main-collage-wrap {
     position: fixed;
-    inset: 0;
+    top: 48px;
+    left: 0; right: 0; bottom: 0;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -510,8 +511,8 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: min(100vh, 100vw);
-    height: min(100vh, 100vw);
+    width: min(calc(100vh - 48px), 100vw);
+    height: min(calc(100vh - 48px), 100vw);
     background-size: contain;
     background-position: center;
     background-repeat: no-repeat;
@@ -526,6 +527,7 @@
     justify-content: center;
     text-align: center;
     padding: 1rem;
+    max-width: 44vmin;
   }
   .main-oval-window .main-eyebrow { margin-bottom: 0.5rem; text-shadow: 0 0 20px rgba(253,246,240,1), 0 0 40px rgba(253,246,240,1); }
   .main-oval-window .main-name { font-size: clamp(3rem, 7vw, 6rem); text-shadow: 0 0 20px rgba(253,246,240,1), 0 0 40px rgba(253,246,240,1), 0 0 60px rgba(253,246,240,0.8); }
