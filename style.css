@@ -108,9 +108,9 @@ body::before {
 }
 .main-collage-bg {
   position: absolute;
-  inset: 0;
+  inset: 2vmin;
   background-size: contain;
-  background-position: center;
+  background-position: center 58%;
   background-repeat: no-repeat;
 }
 .main-oval-window {
@@ -124,6 +124,7 @@ body::before {
   padding: 1rem;
   width: 40vmin;
   max-width: 340px;
+  margin-top: -10vh;
 }
 
 .main-eyebrow {
