@@ -65,6 +65,9 @@ body::before {
   padding: 1.2rem 2rem;
   z-index: 100;
   background: linear-gradient(to bottom, var(--cream) 60%, transparent);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.4s ease;
 }
 .nav-btn {
   font-family: 'DM Sans', sans-serif;

@@ -145,8 +145,4 @@ function launchConfetti() {
 
 window.addEventListener('load', () => {
   setTimeout(launchConfetti, 400);
-  const nav = document.getElementById('main-nav');
-  nav.style.opacity = '0';
-  nav.style.pointerEvents = 'none';
-  nav.style.transition = 'opacity 0.4s ease';
 });
