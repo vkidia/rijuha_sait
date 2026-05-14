@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Маша, с днём рождения! 🎂</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&family=Dancing+Script:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<nav class="nav" id="main-nav">
+  <button class="nav-btn active" onclick="showPage('main')" data-page="main">Главная</button>
+  <button class="nav-btn" onclick="showPage('photos')" data-page="photos">Фото</button>
+  <button class="nav-btn" onclick="showPage('music')" data-page="music">Музыка</button>
+  <button class="nav-btn" onclick="showPage('letter')" data-page="letter">Письмо</button>
+</nav>
+
+<div class="deco-circle" style="width:400px;height:400px;background:radial-gradient(circle,#f2d9d040,transparent 70%);top:-100px;right:-100px;"></div>
+<div class="deco-circle" style="width:300px;height:300px;background:radial-gradient(circle,#e8b4a230,transparent 70%);bottom:-80px;left:-80px;"></div>
+
+<!-- PAGE 1: MAIN -->
+<div class="page active" id="page-main">
+  <div class="main-collage-wrap">
+    <div class="main-collage-bg" style="background-image: url('collage_arched.png');"></div>
+    <div class="main-oval-window">
+      <p class="main-eyebrow">✦ с днём рождения ✦</p>
+      <h1 class="main-name">Ма<em>ша</em></h1>
+      <p class="main-subtitle">Тебе уже 22 года</p>
+      <p class="main-joke">жаль не six seven 🙃</p>
+      <div class="main-divider"></div>
+      <div class="main-sections">
+        <button class="section-link" onclick="showPage('photos')">
+          <div class="section-link-icon">📸</div>
+          <span class="section-link-label">Фото</span>
+        </button>
+        <button class="section-link" onclick="showPage('music')">
+          <div class="section-link-icon">♪</div>
+          <span class="section-link-label">Музыка</span>
+        </button>
+        <button class="section-link" onclick="showPage('letter')">
+          <div class="section-link-icon">✉</div>
+          <span class="section-link-label">Письмо</span>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- PAGE 2: PHOTOS -->
+<div class="page" id="page-photos">
+  <div class="photos-header">
+    <h2>мы любим тебя в любом настроении</h2>
+    <p>а ещё в любом освещении, и даже без него</p>
+  </div>
+  <div class="polaroid-grid" id="polaroid-grid"></div>
+</div>
+
+<!-- PAGE 3: MUSIC -->
+<div class="page" id="page-music">
+  <div class="music-note-big" style="top:15%;left:5%;">♩</div>
+  <div class="music-note-big" style="top:60%;right:8%;animation-delay:-2s;font-size:2.5rem;">♫</div>
+  <div class="music-header">
+    <h2>твоя музыка</h2>
+    <p>треки, которые = ты</p>
+  </div>
+  <div class="music-list" id="music-list"></div>
+  <div id="audio-container" style="display:none;"></div>
+</div>
+
+<!-- PAGE 4: LETTER -->
+<div class="page" id="page-letter">
+  <div class="letter-wrapper">
+    <div class="letter-lines"></div>
+    <span class="letter-date" id="letter-date"></span>
+    <span class="letter-salutation">Дорогая Маша,</span>
+    <div class="letter-body">
+      <p>Мы хотели написать что-то умное и красивое, но в итоге просто сидели и смеялись, вспоминая всё, что было.</p>
+      <p>Ты — тот человек, с которым любая ерунда превращается в историю, которую будешь рассказывать спустя годы. Спасибо за это.</p>
+      <p>Пусть этот год будет таким же непредсказуемым, ярким и тёплым, как ты сама. Мы тебя очень любим.</p>
+    </div>
+    <span class="letter-sign">с любовью, твои ✦</span>
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
