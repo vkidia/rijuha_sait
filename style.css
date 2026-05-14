@@ -108,11 +108,14 @@ body::before {
 }
 .main-collage-bg {
   position: absolute;
-  inset: 2vmin;
+  top: 50%;
+  left: 50%;
+  width: min(90vh, 90vw);
+  height: min(90vh, 90vw);
+  transform: translate(-50%, -48%);
   background-size: contain;
   background-position: center;
   background-repeat: no-repeat;
-  transform: translateY(6vh);
 }
 .main-oval-window {
   position: relative;
