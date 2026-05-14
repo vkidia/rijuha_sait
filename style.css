@@ -111,8 +111,8 @@ body::before {
 }
 .main-collage-bg {
   position: absolute;
-  inset: 5vh 5vw 1vh 5vw;
-  background-size: contain;
+  inset: 0;
+  background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
 }
