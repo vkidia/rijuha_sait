@@ -123,7 +123,7 @@ function showPage(id) {
 }
 
 function launchConfetti() {
-  const colors = ['#f2d9d0','#e8b4a2','#c98b78','#fdf6f0','#8b5a4a'];
+  const colors = ['#b4dcc3','#5fac7a','#2e7d52','#e0f2e8','#1a5236'];
   for (let i = 0; i < 60; i++) {
     setTimeout(() => {
       const el = document.createElement('div');

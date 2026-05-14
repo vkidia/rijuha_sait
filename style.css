@@ -1,14 +1,14 @@
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
 :root {
-  --cream: #ffffff;
-  --blush: #f2d9d0;
-  --rose: #e8b4a2;
-  --dusty: #c98b78;
-  --deep: #8b5a4a;
-  --text: #3d2318;
-  --muted: #9a7060;
-  --white: #fffcfa;
+  --cream: #e0f2e8;
+  --blush: #b4dcc3;
+  --rose:  #5fac7a;
+  --dusty: #2e7d52;
+  --deep:  #1a5236;
+  --text:  #112e1e;
+  --muted: #3d6e51;
+  --white: #f0faf4;
 }
 
 html, body {
@@ -64,7 +64,7 @@ body::before {
   gap: 2rem;
   padding: 1.2rem 2rem;
   z-index: 100;
-  background: linear-gradient(to bottom, rgba(255,255,255,0.92) 60%, transparent);
+  background: linear-gradient(to bottom, rgba(224,242,232,0.94) 60%, transparent);
   opacity: 0;
   pointer-events: none;
   transition: opacity 0.4s ease;
@@ -200,14 +200,14 @@ body::before {
 .section-link:hover .section-link-icon { background: var(--blush); border-color: var(--dusty); }
 .section-link-label { font-size: 11px; letter-spacing: 0.15em; text-transform: uppercase; font-weight: 500; }
 
-.main-oval-window .main-eyebrow { margin-bottom: 0.5rem; text-shadow: 0 0 20px rgba(253,246,240,1), 0 0 40px rgba(253,246,240,1); }
-.main-oval-window .main-name { font-size: clamp(2.5rem, 6vw, 5rem); text-shadow: 0 0 20px rgba(253,246,240,1), 0 0 40px rgba(253,246,240,1), 0 0 60px rgba(253,246,240,0.8); }
-.main-oval-window .main-subtitle { font-size: clamp(0.9rem, 1.8vw, 1.1rem); margin-top: 0.4rem; text-shadow: 0 0 15px rgba(253,246,240,1), 0 0 30px rgba(253,246,240,1); }
-.main-oval-window .main-joke { font-size: 11px; text-shadow: 0 0 10px rgba(253,246,240,1); }
+.main-oval-window .main-eyebrow { margin-bottom: 0.5rem; text-shadow: 0 0 20px rgba(224,242,232,1), 0 0 40px rgba(224,242,232,1); }
+.main-oval-window .main-name { font-size: clamp(2.5rem, 6vw, 5rem); text-shadow: 0 0 20px rgba(224,242,232,1), 0 0 40px rgba(224,242,232,1), 0 0 60px rgba(224,242,232,0.8); }
+.main-oval-window .main-subtitle { font-size: clamp(0.9rem, 1.8vw, 1.1rem); margin-top: 0.4rem; text-shadow: 0 0 15px rgba(224,242,232,1), 0 0 30px rgba(224,242,232,1); }
+.main-oval-window .main-joke { font-size: 11px; text-shadow: 0 0 10px rgba(224,242,232,1); }
 .main-oval-window .main-divider { margin: 0.6rem auto; }
 .main-oval-window .main-sections { gap: 1rem; }
-.main-oval-window .section-link-icon { width: 34px; height: 34px; font-size: 0.85rem; background: rgba(253,246,240,0.8); }
-.main-oval-window .section-link-label { font-size: 9px; text-shadow: 0 0 10px rgba(253,246,240,1); }
+.main-oval-window .section-link-icon { width: 34px; height: 34px; font-size: 0.85rem; background: rgba(224,242,232,0.8); }
+.main-oval-window .section-link-label { font-size: 9px; text-shadow: 0 0 10px rgba(224,242,232,1); }
 
 /* PAGE 2 — PHOTOS */
 #page-photos { padding-top: 5rem; padding-bottom: 2rem; justify-content: flex-start; min-height: 100vh; }
@@ -218,13 +218,13 @@ body::before {
 .polaroid {
   background: var(--white);
   padding: 10px 10px 36px;
-  box-shadow: 0 4px 20px rgba(139,90,74,0.12), 0 1px 4px rgba(139,90,74,0.08);
+  box-shadow: 0 4px 20px rgba(26,82,54,0.13), 0 1px 4px rgba(26,82,54,0.08);
   transform: rotate(var(--rot, 0deg));
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   max-width: 200px;
   cursor: default;
 }
-.polaroid:hover { transform: rotate(0deg) scale(1.04); box-shadow: 0 8px 32px rgba(139,90,74,0.18); }
+.polaroid:hover { transform: rotate(0deg) scale(1.04); box-shadow: 0 8px 32px rgba(26,82,54,0.2); }
 .polaroid-img { width: 180px; height: 180px; object-fit: cover; display: block; }
 .polaroid-placeholder { width: 180px; height: 180px; background: var(--blush); display: flex; align-items: center; justify-content: center; font-size: 2.5rem; color: var(--rose); }
 .polaroid-caption { text-align: center; font-family: 'Dancing Script', cursive; font-size: 14px; color: var(--muted); margin-top: 8px; }
@@ -245,7 +245,7 @@ body::before {
   border-radius: 2px;
   transition: border-color 0.3s, box-shadow 0.3s;
 }
-.track:hover, .track.playing { border-color: var(--rose); box-shadow: 0 2px 12px rgba(232,180,162,0.2); }
+.track:hover, .track.playing { border-color: var(--rose); box-shadow: 0 2px 12px rgba(95,172,122,0.22); }
 .track-play {
   width: 36px; height: 36px;
   border-radius: 50%;
@@ -286,7 +286,7 @@ body::before {
   max-width: 560px;
   width: 100%;
   padding: 3.5rem 3rem 3rem;
-  box-shadow: 0 4px 40px rgba(139,90,74,0.1);
+  box-shadow: 0 4px 40px rgba(26,82,54,0.12);
   display: flex;
   flex-direction: column;
   gap: 1.2rem;
