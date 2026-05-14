@@ -1,7 +1,7 @@
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
 :root {
-  --cream: #fdf6f0;
+  --cream: #ffffff;
   --blush: #f2d9d0;
   --rose: #e8b4a2;
   --dusty: #c98b78;
@@ -64,7 +64,7 @@ body::before {
   gap: 2rem;
   padding: 1.2rem 2rem;
   z-index: 100;
-  background: linear-gradient(to bottom, var(--cream) 60%, transparent);
+  background: linear-gradient(to bottom, rgba(255,255,255,0.92) 60%, transparent);
   opacity: 0;
   pointer-events: none;
   transition: opacity 0.4s ease;
@@ -97,7 +97,7 @@ body::before {
 
 /* PAGE 1 — MAIN */
 #page-main {
-  background: var(--cream);
+  background: transparent;
   padding: 0;
   overflow: hidden;
 }
