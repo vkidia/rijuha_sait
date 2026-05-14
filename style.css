@@ -110,8 +110,9 @@ body::before {
   position: absolute;
   inset: 2vmin;
   background-size: contain;
-  background-position: center 58%;
+  background-position: center;
   background-repeat: no-repeat;
+  transform: translateY(6vh);
 }
 .main-oval-window {
   position: relative;
