@@ -118,7 +118,6 @@ body::before {
 }
 .main-oval-window {
   position: relative;
-  z-index: 2;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -188,7 +187,6 @@ body::before {
   border: none;
   color: var(--muted);
   transition: color 0.3s, transform 0.3s;
-  mix-blend-mode: multiply;
   -webkit-appearance: none;
   appearance: none;
 }
