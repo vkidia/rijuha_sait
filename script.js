@@ -28,10 +28,6 @@ const tracks = [
 // КОД — не нужно трогать
 // ==============================
 
-const months = ['января','февраля','марта','апреля','мая','июня','июля','августа','сентября','октября','ноября','декабря'];
-const d = new Date();
-document.getElementById('letter-date').textContent = `${d.getDate()} ${months[d.getMonth()]} ${d.getFullYear()}`;
-
 const grid = document.getElementById('polaroid-grid');
 const rots = [-2.5, 1.8, -1.2, 2.2, -0.8, 1.5, -2, 1, -1.8, 2.5];
 photos.forEach((p, i) => {
@@ -105,6 +101,15 @@ tracks.forEach((t, i) => {
     document.getElementById(`bar-${i}`).style.width = '0%';
   });
 });
+
+function switchLetter(idx) {
+  document.querySelectorAll('.letter-wrapper').forEach((w, i) => {
+    w.classList.toggle('active', i === idx);
+  });
+  document.querySelectorAll('.letter-tab').forEach((t, i) => {
+    t.classList.toggle('active', i === idx);
+  });
+}
 
 function showPage(id) {
   document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
