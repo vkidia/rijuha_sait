@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 152" fill="none">
+  <!-- main heart outline - hand-drawn feel -->
+  <path d="M80 38C80 22 60 8 40 8C18 8 6 28 8 54C12 92 56 122 80 142C104 122 148 92 152 54C154 28 142 8 120 8C100 8 80 22 80 38Z"
+        stroke="#c97b8a" stroke-width="5.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <!-- inner highlight for sketch texture -->
+  <path d="M80 130C77 122 18 86 14 54C11 38 18 24 30 16"
+        stroke="#e8a4b8" stroke-width="2.5" stroke-linecap="round" opacity="0.45"/>
+</svg>

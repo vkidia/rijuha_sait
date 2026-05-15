@@ -333,6 +333,18 @@ body::before {
 .letter-body p { font-family: 'Cormorant Garamond', serif; font-size: 1.1rem; line-height: 2; color: var(--text); }
 .letter-sign { font-family: 'Dancing Script', cursive; font-size: 1.3rem; color: var(--dusty); margin-top: 0.5rem; align-self: flex-end; text-align: right; }
 
+/* Letter page hearts */
+.letter-heart-float {
+  position: fixed;
+  pointer-events: none;
+  z-index: 0;
+  animation: letterHeartFloat 6s ease-in-out infinite;
+}
+@keyframes letterHeartFloat {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
 /* ANIMATIONS */
 @keyframes fadeUp {
   from { opacity: 0; transform: translateY(16px); }
@@ -352,6 +364,9 @@ body::before {
 }
 
 /* RESPONSIVE */
+@media (max-width: 900px) {
+  .letter-heart-float { display: none; }
+}
 @media (max-width: 480px) {
   .letter-wrapper { padding: 2.5rem 1.5rem 2rem; }
   .letter-tabs { gap: 1.5rem; }
