@@ -175,6 +175,7 @@ body::before {
 .main-sections {
   display: flex;
   gap: 2.5rem;
+  align-items: flex-end;
   animation: fadeUp 0.8s ease 1s both;
 }
 .section-link {
@@ -197,6 +198,7 @@ body::before {
   filter: drop-shadow(0 2px 6px rgba(26,82,54,0.15));
 }
 .section-link:hover .section-link-img { transform: scale(1.12); }
+.section-link-label { font-size: 11px; letter-spacing: 0.12em; text-transform: lowercase; font-weight: 500; color: var(--muted); }
 
 .main-oval-window .main-eyebrow { margin-bottom: 0.5rem; text-shadow: 0 0 20px rgba(224,242,232,1), 0 0 40px rgba(224,242,232,1); }
 .main-oval-window .main-name { font-size: clamp(2.5rem, 6vw, 5rem); text-shadow: 0 0 20px rgba(224,242,232,1), 0 0 40px rgba(224,242,232,1), 0 0 60px rgba(224,242,232,0.8); }
@@ -205,6 +207,7 @@ body::before {
 .main-oval-window .main-divider { margin: 0.6rem auto; }
 .main-oval-window .main-sections { gap: 1.2rem; }
 .main-oval-window .section-link-img { height: 44px; }
+.main-oval-window .section-link-label { font-size: 9px; text-shadow: 0 0 10px rgba(224,242,232,1); }
 
 /* PAGE 2 — PHOTOS */
 #page-photos { padding-top: 5rem; padding-bottom: 2rem; justify-content: flex-start; min-height: 100vh; }
