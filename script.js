@@ -3,14 +3,15 @@
 // ==============================
 
 const photos = [
-  { src: "photo/photo1.jpg", caption: "подпись к фото 1" },
+  { src: "photo/photo1.jpg", caption: "игривой" },
   { src: "photo/photo2.jpg", caption: "безумной" },
   { src: "photo/photo3.jpg", caption: "творческой" },
-  { src: "photo/photo4.jpg", caption: "подпись к фото 4" },
-  { src: "photo/photo5.jpg", caption: "подпись к фото 5" },
-  { src: "photo/photo6.jpg", caption: "подпись к фото 6" },
+  { src: "photo/photo4.jpg", caption: "сонной" },
+  { src: "photo/photo5.jpg", caption: "синей" },
+  { src: "photo/photo6.jpg", caption: "недовольной" },
+  { src: "photo/photo7.jpg", caption: "довольной" },
+  { src: "photo/photo8.jpg", caption: "короче, любой!" },
   // добавляй новые строчки сюда:
-  // { src: "photo/photo7.jpg", caption: "подпись" },
 ];
 
 const tracks = [
