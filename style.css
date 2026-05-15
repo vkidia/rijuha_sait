@@ -8,7 +8,7 @@
   --deep:  #1a5236;
   --text:  #112e1e;
   --muted: #3d6e51;
-  --white: #f0faf4;
+  --white: #e0f2e8;
 }
 
 html, body {
@@ -202,8 +202,8 @@ body::before {
 
 .main-oval-window .main-eyebrow { margin-bottom: 0.5rem; text-shadow: 0 0 20px rgba(224,242,232,1), 0 0 40px rgba(224,242,232,1); }
 .main-oval-window .main-name { font-size: clamp(2.5rem, 6vw, 5rem); text-shadow: 0 0 20px rgba(224,242,232,1), 0 0 40px rgba(224,242,232,1), 0 0 60px rgba(224,242,232,0.8); }
-.main-oval-window .main-subtitle { font-size: clamp(0.9rem, 1.8vw, 1.1rem); margin-top: 0.4rem; text-shadow: 0 0 15px rgba(224,242,232,1), 0 0 30px rgba(224,242,232,1); }
-.main-oval-window .main-joke { font-size: 11px; text-shadow: 0 0 10px rgba(224,242,232,1); }
+.main-oval-window .main-subtitle { font-size: clamp(1rem, 2vw, 1.3rem); margin-top: calc(0.4rem + 1cm); text-shadow: 0 0 15px rgba(224,242,232,1), 0 0 30px rgba(224,242,232,1); }
+.main-oval-window .main-joke { font-size: 13px; text-shadow: 0 0 10px rgba(224,242,232,1); }
 .main-oval-window .main-divider { margin: 0.6rem auto; }
 .main-oval-window .main-sections { gap: 1.2rem; }
 .main-oval-window .section-link-img { height: 44px; }
