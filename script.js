@@ -79,7 +79,7 @@ tracks.forEach((t, i) => {
       currentAudio.currentTime = 0;
       currentTrackEl.classList.remove('playing');
       currentTrackEl.querySelector('.track-play').textContent = '▶';
-      document.getElementById(`bar-${currentTrackEl.id.replace('track-','bar-')}`).style.width = '0%';
+      currentTrackEl.querySelector('.track-progress-bar').style.width = '0%';
     }
     if (audio.paused) {
       audio.play().catch(() => {});
