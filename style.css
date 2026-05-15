@@ -127,7 +127,7 @@ body::before {
   padding: 1rem;
   width: 40vmin;
   max-width: 340px;
-  margin-top: -10vh;
+  margin-top: -4vh;
 }
 
 .main-eyebrow {
@@ -196,6 +196,7 @@ body::before {
   object-fit: contain;
   transition: transform 0.3s ease;
   filter: drop-shadow(0 2px 6px rgba(26,82,54,0.15));
+  mix-blend-mode: multiply;
 }
 .section-link:hover .section-link-img { transform: scale(1.12); }
 .section-link-label { font-size: 11px; letter-spacing: 0.12em; text-transform: lowercase; font-weight: 500; color: var(--muted); }
