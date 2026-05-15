@@ -4,7 +4,7 @@
 
 const photos = [
   { src: "photos/photo1.jpg", caption: "подпись к фото 1" },
-  { src: "photos/photo2.jpg", caption: "подпись к фото 2" },
+  { src: "photos/photo2.jpg", caption: "безумной" },
   { src: "photos/photo3.jpg", caption: "подпись к фото 3" },
   { src: "photos/photo4.jpg", caption: "подпись к фото 4" },
   { src: "photos/photo5.jpg", caption: "подпись к фото 5" },
@@ -37,7 +37,7 @@ photos.forEach((p, i) => {
   card.className = 'polaroid';
   card.style.setProperty('--rot', (rots[i % rots.length]) + 'deg');
   if (p.src) {
-    card.innerHTML = `<img class="polaroid-img" src="${p.src}" alt="${p.caption}"><p class="polaroid-caption">${p.caption}</p>`;
+    card.innerHTML = `<img class="polaroid-img" src="${p.src}" alt=""><p class="polaroid-caption">${p.caption}</p>`;
   } else {
     card.innerHTML = `<div class="polaroid-placeholder">📷</div><p class="polaroid-caption">${p.caption}</p>`;
   }

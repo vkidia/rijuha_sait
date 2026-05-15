@@ -214,7 +214,7 @@ body::before {
 /* PAGE 2 — PHOTOS */
 #page-photos { padding-top: 5rem; padding-bottom: 2rem; justify-content: flex-start; min-height: 100vh; }
 .photos-header { text-align: center; margin-bottom: 2.5rem; animation: fadeUp 0.6s ease both; }
-.photos-header h2 { font-family: 'Cormorant Garamond', serif; font-size: clamp(2rem, 6vw, 3.5rem); font-weight: 300; font-style: italic; color: var(--text); }
+.photos-header h2 { font-family: 'Cormorant Garamond', serif; font-size: clamp(1.4rem, 3.5vw, 2.2rem); font-weight: 300; font-style: italic; color: var(--text); }
 .photos-header p { font-size: 13px; color: var(--muted); margin-top: 0.5rem; letter-spacing: 0.08em; }
 .polaroid-grid { display: flex; flex-wrap: wrap; gap: 1.5rem; justify-content: center; max-width: 900px; width: 100%; }
 .polaroid {
@@ -227,8 +227,8 @@ body::before {
   cursor: default;
 }
 .polaroid:hover { transform: rotate(0deg) scale(1.04); box-shadow: 0 8px 32px rgba(26,82,54,0.2); }
-.polaroid-img { width: 180px; height: 180px; object-fit: cover; display: block; }
-.polaroid-placeholder { width: 180px; height: 180px; background: var(--blush); display: flex; align-items: center; justify-content: center; font-size: 2.5rem; color: var(--rose); }
+.polaroid-img { width: 180px; height: 240px; object-fit: cover; object-position: top center; display: block; }
+.polaroid-placeholder { width: 180px; height: 240px; background: var(--blush); display: flex; align-items: center; justify-content: center; font-size: 2.5rem; color: var(--rose); }
 .polaroid-caption { text-align: center; font-family: 'Dancing Script', cursive; font-size: 14px; color: var(--muted); margin-top: 8px; }
 
 /* PAGE 3 — MUSIC */
@@ -330,7 +330,7 @@ body::before {
   .letter-wrapper { padding: 2.5rem 1.5rem 2rem; }
   .polaroid-grid { gap: 1rem; }
   .polaroid { max-width: 160px; }
-  .polaroid-img, .polaroid-placeholder { width: 136px; height: 136px; }
+  .polaroid-img, .polaroid-placeholder { width: 136px; height: 181px; }
   .nav { gap: 1rem; }
   .nav-btn { font-size: 10px; }
 }
