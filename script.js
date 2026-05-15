@@ -15,12 +15,13 @@ const photos = [
 ];
 
 const tracks = [
-  { title: "Название песни 1", artist: "Артист", src: "music/track1.mp3", note: "вот это точно ты" },
-  { title: "Название песни 2", artist: "Артист", src: "music/track2.mp3", note: "помнишь, мы слушали..." },
-  { title: "Название песни 3", artist: "Артист", src: "music/track3.mp3", note: "твой гимн" },
-  { title: "Название песни 4", artist: "Артист", src: "music/track4.mp3", note: "🎵" },
+  { title: "тупа ты", src: "music/track1.mp3", note: "))" },
+  { title: "лучший тик ток (или нет) танец", src: "music/track2.mp3", note: "бж бж бж" },
+  { title: "катер...", src: "music/track3.mp3", note: "тагильская речка-вонючка" },
+  { title: "лагер", src: "music/track4.mp3", note: "илюша" },
+  { title: "ты", src: "music/track5.mp3", note: "с тобой только такие эмоции" },
+  { title: "пасхалко", src: "music/track6.mp3", note: "секретная пасхалко от Любы" },
   // добавляй новые строчки сюда:
-  // { title: "...", artist: "...", src: "music/track5.mp3", note: "..." },
 ];
 
 // ==============================
@@ -64,7 +65,6 @@ tracks.forEach((t, i) => {
     <button class="track-play" aria-label="Играть ${t.title}">▶</button>
     <div class="track-info">
       <div class="track-title">${t.title}</div>
-      <div class="track-artist">${t.artist}</div>
       <div class="track-progress"><div class="track-progress-bar" id="bar-${i}"></div></div>
     </div>
     <div class="track-note">${t.note}</div>
